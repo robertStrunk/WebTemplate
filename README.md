@@ -58,7 +58,7 @@ WebTemplate/
 
 1. **Clone or download this template**
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/robertStrunk/WebTemplate
    cd WebTemplate
    ```
 

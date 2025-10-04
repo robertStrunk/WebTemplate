@@ -1,0 +1,40 @@
+<% layout('layout') -%>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 mx-auto text-center">
+            <div class="error-page">
+                <h1 class="display-1 text-primary">404</h1>
+                <h2 class="mb-4"><%= title %></h2>
+                <p class="lead mb-4"><%= message %></p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="/" class="btn btn-primary btn-lg">
+                        <i class="fas fa-home me-2"></i>Go Home
+                    </a>
+                    <button class="btn btn-outline-primary btn-lg" onclick="history.back()">
+                        <i class="fas fa-arrow-left me-2"></i>Go Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.error-page {
+    padding: 2rem 0;
+}
+
+.error-page h1 {
+    font-size: 8rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .error-page h1 {
+        font-size: 6rem;
+    }
+}
+</style>

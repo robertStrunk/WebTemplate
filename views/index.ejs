@@ -1,0 +1,83 @@
+<% layout('layout') -%>
+
+<div class="hero-section bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4"><%= title %></h1>
+                <p class="lead mb-4"><%= message %></p>
+                <div class="d-flex gap-3">
+                    <a href="/about" class="btn btn-light btn-lg">Learn More</a>
+                    <a href="/api/health" class="btn btn-outline-light btn-lg">API Status</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <i class="fas fa-rocket fa-10x opacity-75"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-bolt fa-3x text-primary mb-3"></i>
+                    <h5 class="card-title">Fast Setup</h5>
+                    <p class="card-text">Get your web application up and running in minutes with this template.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-cloud fa-3x text-success mb-3"></i>
+                    <h5 class="card-title">Heroku Ready</h5>
+                    <p class="card-text">Pre-configured for easy deployment to Heroku with all necessary files.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body text-center">
+                    <i class="fas fa-mobile-alt fa-3x text-info mb-3"></i>
+                    <h5 class="card-title">Responsive</h5>
+                    <p class="card-text">Built with Bootstrap for mobile-first, responsive design.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center">
+                <h2 class="mb-4">Ready to Build Something Amazing?</h2>
+                <p class="lead mb-4">This template provides everything you need to start building your next web application.</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <button class="btn btn-primary btn-lg" onclick="testAPI()">
+                        <i class="fas fa-play me-2"></i>Test API
+                    </button>
+                    <a href="/contact" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-envelope me-2"></i>Get Started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function testAPI() {
+    fetch('/api/health')
+        .then(response => response.json())
+        .then(data => {
+            alert('API Status: ' + data.status + '\nUptime: ' + Math.round(data.uptime) + ' seconds');
+        })
+        .catch(error => {
+            alert('API Error: ' + error.message);
+        });
+}
+</script>

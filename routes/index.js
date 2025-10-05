@@ -5,8 +5,7 @@ const router = express.Router();
 router.get('/', (req, res) => {
   res.render('index', {
     title: 'Web App Template',
-    message: 'Welcome to your new web application!',
-    layout: 'layout'
+    message: 'Welcome to your new web application!'
   });
 });
 
@@ -14,8 +13,7 @@ router.get('/', (req, res) => {
 router.get('/about', (req, res) => {
   res.render('about', {
     title: 'About',
-    message: 'This is a template for building web applications quickly.',
-    layout: 'layout'
+    message: 'This is a template for building web applications quickly.'
   });
 });
 
@@ -23,8 +21,7 @@ router.get('/about', (req, res) => {
 router.get('/contact', (req, res) => {
   res.render('contact', {
     title: 'Contact',
-    message: 'Get in touch with us!',
-    layout: 'layout'
+    message: 'Get in touch with us!'
   });
 });
 

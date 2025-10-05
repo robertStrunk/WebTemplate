@@ -37,14 +37,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Layout system setup
-app.use((req, res, next) => {
-  res.locals.layout = (layoutName) => {
-    res.locals.layoutName = layoutName;
-  };
-  next();
-});
-
 // Routes
 app.use('/', require('./routes/index'));
 app.use('/api', require('./routes/api'));
@@ -62,8 +54,7 @@ app.use((err, req, res, next) => {
 app.use((req, res) => {
   res.status(404).render('404', { 
     title: 'Page Not Found',
-    message: 'The page you are looking for does not exist.',
-    layout: 'layout'
+    message: 'The page you are looking for does not exist.'
   });
 });
 
